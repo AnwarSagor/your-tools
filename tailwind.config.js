@@ -8,6 +8,7 @@ module.exports = {
     themes: [
       {
         tooltheme: {
+          custom: "#bg-gradient-to-r from-blue-900 to-cyan-500",
           primary: "#a991f7",
           secondary: "#f6d860",
           accent: "#37cdbe",
