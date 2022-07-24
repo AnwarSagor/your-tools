@@ -6,6 +6,7 @@ import Tools from './Pages/ToolPage/Tools';
 import About from './Pages/About';
 import Footer from './Pages/SharedPage/Footer';
 import SignIn from './Pages/LoginPage/SignIn';
+import SignUp from './Pages/LoginPage/SignUp';
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
         <Route path='' element></Route>
         <Route path='' element></Route>
         <Route path='' element></Route>
-        <Route path='' element></Route>
         <Route path='/signIn' element={<SignIn></SignIn>}></Route>
+        <Route path='/signUp' element={<SignUp></SignUp>}></Route>
+
       </Routes>
       <Footer></Footer>
     </div>

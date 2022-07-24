@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../SharedPage/Loading';
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -14,12 +15,18 @@ const SignIn = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    let signInError;
+
     if (loading || gLoading) {
         return <Loading></Loading>
     }
 
-    if (gUser) {
-        console.log(gUser);
+    if (error || gError) {
+        signInError = <p className='text-red-600'>{error?.message || gError?.message}</p>
+    }
+
+    if (user || gUser) {
+        console.log(user || gUser);
     }
 
     const onSubmit = data => {
@@ -31,7 +38,7 @@ const SignIn = () => {
         <div class='flex h-screen justify-center items-center'>
             <div class="card w-96 bg-base-100 shadow-xl">
                 <div class="card-body">
-                    <h2 class="font-extrabold text-center text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue-900 to-cyan-300 '">Sign-in</h2>
+                    <h2 class="font-extrabold text-center text-4xl text-transparent bg-clip-text bg-gradient-to-b from-blue-900 to-cyan-300 '">Sign-in</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div class="form-control w-full max-w-xs">
@@ -83,10 +90,10 @@ const SignIn = () => {
                             </label>
                         </div>
 
-
+                        {signInError}
                         <input className='btn w-full max-w-xs' type="submit" value='Sign-in' />
                     </form>
-
+                    <p>New to Your Tools? <Link className='text-primary' to='/signUp'>Please Sign-up</Link></p>
                     <div class="divider">OR</div>
 
                     <button
