@@ -3,7 +3,7 @@ import React from 'react';
 const Loading = () => {
     return (
         <div>
-            <h1>Loading</h1>
+            <progress class="progress w-56"></progress>
         </div>
     );
 };

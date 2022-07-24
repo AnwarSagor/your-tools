@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "_id": 1,
         "name": "MacBook M1 Air 13",
         "price": "Starting from $999",
         "quantity": "1",
@@ -9,7 +9,7 @@
         "img": "https://d28i4xct2kl5lp.cloudfront.net/product_images/28846_6fd4fea4-b7e2-4cd8-9d9d-e6dd0dee55d1.jpg"
     },
     {
-        "id": 2,
+        "_id": 2,
         "name": "MacBook M2 Air 13",
         "price": "Starting from $1,199",
         "quantity": "1",
@@ -18,7 +18,7 @@
         "img": "https://d28i4xct2kl5lp.cloudfront.net/product_images/28846_6fd4fea4-b7e2-4cd8-9d9d-e6dd0dee55d1.jpg"
     },
     {
-        "id": 3,
+        "_id": 3,
         "name": "MacBook M1 Pro  13",
         "price": "Starting from $1,299",
         "quantity": "1",
@@ -27,7 +27,7 @@
         "img": "https://d28i4xct2kl5lp.cloudfront.net/product_images/28846_6fd4fea4-b7e2-4cd8-9d9d-e6dd0dee55d1.jpg"
     },
     {
-        "id": 4,
+        "_id": 4,
         "name": "MacBook M2 Pro  13",
         "price": "Starting from $1,299",
         "quantity": "1",
@@ -36,7 +36,7 @@
         "img": "https://d28i4xct2kl5lp.cloudfront.net/product_images/28846_6fd4fea4-b7e2-4cd8-9d9d-e6dd0dee55d1.jpg"
     },
     {
-        "id": 5,
+        "_id": 5,
         "name": "MacBook M1 Pro 14",
         "price": "Starting from $1,999",
         "quantity": "1",
@@ -45,7 +45,7 @@
         "img": "https://d28i4xct2kl5lp.cloudfront.net/product_images/28846_6fd4fea4-b7e2-4cd8-9d9d-e6dd0dee55d1.jpg"
     },
     {
-        "id": 6,
+        "_id": 6,
         "name": "MacBook M1 Pro 16",
         "price": "Starting from $2,499",
         "quantity": "1",
@@ -54,7 +54,7 @@
         "img": "https://d28i4xct2kl5lp.cloudfront.net/product_images/28846_6fd4fea4-b7e2-4cd8-9d9d-e6dd0dee55d1.jpg"
     },
     {
-        "id": 7,
+        "_id": 7,
         "name": "MacBook M1 Max 16",
         "price": "Starting from $3,499",
         "quantity": "1",
@@ -63,7 +63,7 @@
         "img": "https://d28i4xct2kl5lp.cloudfront.net/product_images/28846_6fd4fea4-b7e2-4cd8-9d9d-e6dd0dee55d1.jpg"
     },
     {
-        "id": 8,
+        "_id": 8,
         "name": "iMac M1",
         "price": "Starting from $1,299",
         "quantity": "1",
@@ -72,7 +72,7 @@
         "img": "https://d28i4xct2kl5lp.cloudfront.net/product_images/28846_6fd4fea4-b7e2-4cd8-9d9d-e6dd0dee55d1.jpg"
     },
     {
-        "id": 9,
+        "_id": 9,
         "name": "Mac Mini M1",
         "price": "Starting from $699",
         "quantity": "1",

@@ -8,10 +8,10 @@ const Header = () => {
         <li><Link to="/home#reviews">Reviews</Link></li>
         <li><Link to="/home#bussinessSummary">Business Summary</Link></li>
         <li><Link to="/about">About</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/signIn">Sign-in</Link></li>
     </>
     return (
-        <div class="navbar bg-gradient-to-r from-cyan-500 to-blue-900 ... text-white">
+        <div class="navbar bg-gradient-to-t from-cyan-500 to-blue-900 ... text-white">
             <div class="navbar-start">
 
                 <div class="dropdown">

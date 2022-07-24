@@ -2,7 +2,7 @@ import React from 'react';
 import './SharedPage.css';
 const Footer = () => {
     return (
-        <footer class="footer fixed bottom-0 footer-center p-4 bg-gradient-to-r from-indigo-900 to-cyan-500 ... text-white">
+        <footer class="footer fixed bottom-0 footer-center p-4 bg-gradient-to-t from-indigo-900 to-cyan-500 ... text-white">
 
             <div class=" items-center grid-flow-col gap-4 md:place-self-center ">
                 <p>Copyright © 2022 - All right reserved</p>
