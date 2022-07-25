@@ -2,7 +2,7 @@ import React from 'react';
 
 const Purchase = () => {
     return (
-        <div>
+        <div className='flex h-screen justify-center items-center'>
             Purchase
         </div>
     );
