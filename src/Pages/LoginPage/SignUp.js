@@ -1,9 +1,9 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../SharedPage/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -13,7 +13,13 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const navigate = useNavigate()
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
     let signUpError;
 
@@ -21,18 +27,21 @@ const SignUp = () => {
         return <Loading></Loading>
     }
 
-    if (error || gError) {
-        signUpError = <p className='text-red-600'>{error?.message || gError?.message}</p>
+    if (error || gError || updateError) {
+        signUpError = <p className='text-red-600'>{error?.message || gError?.message || updateError?.message}</p>
     }
 
     if (user || gUser) {
-        console.log(user || gUser);
+        navigate(from, { replace: true });
     }
 
-    const onSubmit = data => {
+    const onSubmit = async data => {
         console.log(data)
-        createUserWithEmailAndPassword(data.email, data.password);
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
+        console.log('update name done');
     };
+
     return (
         <div class='flex h-screen justify-center items-center'>
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -103,12 +112,14 @@ const SignUp = () => {
                         <input className='btn w-full max-w-xs' type="submit" value='Sign-up' />
                     </form>
                     <p>Already have an account? <Link className='text-primary' to='/signIn'>Please Sign-in</Link></p>
+
                     <div class="divider">OR</div>
 
                     <button
                         onClick={() => signInWithGoogle()}
-                        class="btn btn-outline"
-                    >Continue with Google</button>
+                        class="btn btn-outline">
+                        Continue with Google
+                    </button>
 
                 </div>
             </div>
