@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const OrderForm = ({ tool, setTool }) => {
@@ -24,18 +25,22 @@ const OrderForm = ({ tool, setTool }) => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                if (data.success) {
+                    toast('Your info is submitted')
+                }
             })
-        navigate('/tools');
+        // navigate('/tools');
     };
 
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <h2 className="font-extrabold text-center text-4xl text-transparent bg-clip-text bg-gradient-to-b from-blue-900 to-cyan-300 '">Order Form</h2>
             <div className="card-body">
-                <h2 className='text-center font-bold text-xl'>Submit Your Information</h2>
+                <h2 className="font-extrabold text-center text-2xl text-transparent bg-clip-text bg-gradient-to-b from-blue-900 to-cyan-300 '">Provide Your Information</h2>
+
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="grid grid-clos-1 gap-1">
+                        <input className="input input-bordered w-full max-w-xs" value={name || ''} {...register("toolName")} />
                         <input className="input input-bordered w-full max-w-xs" value={user?.displayName || ''} {...register("name")} />
                         <input className="input input-bordered w-full max-w-xs" placeholder='Address' {...register("address")} />
                         <input className="input input-bordered w-full max-w-xs" placeholder='Mobile' {...register("mobile")} />
@@ -44,11 +49,11 @@ const OrderForm = ({ tool, setTool }) => {
                         <input className="input input-bordered w-full max-w-xs" placeholder='Quantity' type="number" {...register("quantity")} />
                         <input className="input input-bordered w-full max-w-xs" placeholder='Photo URL' type="text" {...register("img")} />
 
-                        <input className='btn btn-outline w-full max-w-xs' type="submit" value="SUBMIT ORDER" />
+                        <input className='btn w-full max-w-xs' type="submit" value="SUBMIT ORDER" />
                     </div>
                 </form>
             </div>
-
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

@@ -32,7 +32,7 @@ const ToolDetail = ({ tool, setTool }) => {
 
                         <p>Name: {user.displayName}</p>
                         <p>Email: {user.email}</p>
-                        <button disabled={tool.quantity < 14} className='btn'>Purchase</button>
+                        {/* <button disabled={tool.quantity < 14} className='btn'>Purchase</button> */}
                     </div>
                 </div>
             </div>
