@@ -29,7 +29,7 @@ const OrderForm = ({ tool, setTool }) => {
                     toast('Your info is submitted')
                 }
             })
-        // navigate('/tools');
+        navigate('/dashboard');
     };
 
 
