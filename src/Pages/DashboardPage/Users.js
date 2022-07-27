@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
-import Loading from '../SharedPage/Loading';
+import User from './User';
 
 const Users = () => {
     const [users, setUsers] = useState([]);
     console.log(users);
     useEffect(() => {
         // fetch('tools.json')
-        fetch('http://localhost:5000/user')
-
+        fetch('http://localhost:5000/user', {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
@@ -20,20 +23,18 @@ const Users = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Email</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>User</th>
+                            <th>Role</th>
+                            <th>Remove user</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map(user =>
-                                <tr key={user._id}>
-                                    <th>1</th>
-                                    <td>{user.email}</td>
-                                    <td></td>
-                                    <td>Blue</td>
-                                </tr>)
+                            users.map(user => <User
+                                key={user._id}
+                                user={user}
+                            ></User>
+                            )
                         }
                     </tbody>
                 </table>
