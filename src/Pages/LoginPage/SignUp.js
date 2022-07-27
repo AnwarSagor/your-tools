@@ -35,7 +35,8 @@ const SignUp = () => {
     }
 
     if (token) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
+        navigate('/myOrders')
     }
 
     const onSubmit = async data => {

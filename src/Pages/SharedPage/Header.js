@@ -7,8 +7,10 @@ import auth from '../../firebase.init';
 const Header = () => {
 
     const [user, loading, error] = useAuthState(auth);
+
     const handleSignOut = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken')
     };
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
