@@ -17,7 +17,7 @@ const Tools = () => {
     return (
         <div className='lg:px-12'>
             <h2 className='font-extrabold text-center text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue-900 to-cyan-300'>YOUR TOOLS</h2>
-            <div className='grid lg:grid-cols-3 md:grid-rows-1  gap-4'>
+            <div className='grid lg:grid-cols-4 md:grid-rows-1  gap-4'>
                 {
                     tools.map(tool =>
                         <Tool

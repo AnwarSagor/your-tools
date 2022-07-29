@@ -29,9 +29,6 @@ const ToolDetail = ({ tool, setTool }) => {
                         }</h3>
                         <h3>Price (per unit price): {price}</h3>
                         <p> <strong>Short Description: </strong> {description}</p>
-
-                        <p>Name: {user.displayName}</p>
-                        <p>Email: {user.email}</p>
                         {/* <button disabled={tool.quantity < 14} className='btn'>Purchase</button> */}
                     </div>
                 </div>

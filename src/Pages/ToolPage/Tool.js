@@ -11,17 +11,15 @@ const Tool = ({ tool, setPurchase }) => {
     }
     return (
         <div>
-            <div key={tool._id} className="card card-compact w-96 my-5 bg-base-100 shadow-xl">
+            <div key={tool._id} className="card card-compact my-5 bg-base-100 shadow-xl">
                 <figure>
                     <img src={img} alt="Tool Image" />
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
-                    <h3>Minimum order quantity: { }</h3>
-                    <h3>Available quantity: { }</h3>
-                    <h3>Price (per unit price): {price}</h3>
-                    <h3>Quantity: {quantity}</h3>
-                    <h3>Supplier: {supplier}</h3>
+                    <h3>Price per unit: {price}</h3>
+                    <h3>Available quantity: {quantity}</h3>
+                    <h3>Minimum order quantity: 20 pieces!</h3>
                     <p> <strong>Short Description: </strong> {description}</p>
                     <button onClick={() => navigateToPurchase(_id)} className='btn'>ORDER NOW</button>
                 </div>
