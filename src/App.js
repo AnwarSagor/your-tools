@@ -48,7 +48,7 @@ function App() {
             <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
             <Route path='users' element={<Users></Users>}></Route>
             <Route path='addTool' element={<AddTool></AddTool>}></Route>
-            <Route path='payment/:orderId' element={<Payment></Payment>}></Route>
+            <Route path='payment/:id' element={<Payment></Payment>}></Route>
           </Route>
 
           <Route path='about' element={<About></About>}></Route>

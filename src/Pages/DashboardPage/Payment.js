@@ -10,14 +10,14 @@ const stripePromise = loadStripe('pk_test_51LQqszCQY2EPuiPHO1miCFepKLerepaW2icqE
 
 
 const Payment = () => {
-    const { orderId } = useParams();
+    const { id } = useParams();
     const [order, setOrder] = useState([]);
 
     const [user, loading, error] = useAuthState(auth);
 
     useEffect(() => {
 
-        const url = `http://localhost:5000/order/${orderId}`
+        const url = `http://localhost:5000/order/${id}`
 
         fetch(url)
             .then(res => res.json())
@@ -41,7 +41,7 @@ const Payment = () => {
             <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
                 <div class="card-body">
                     <Elements stripe={stripePromise}>
-                        <CheckoutForm />
+                        <CheckoutForm order={order} />
                     </Elements>
                 </div>
             </div>
