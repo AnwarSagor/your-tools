@@ -2,7 +2,7 @@ import React from 'react';
 
 const BusinessSummary = () => {
     return (
-        <div className='mx-12 mb-12 pb-5'>
+        <div className='lg:mx-12 my-6'>
             <h2 className='font-extrabold text-center text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue-900 to-cyan-300 uppercase'>Business Summary</h2>
 
             <div class="card bg-base-100 shadow-xl">

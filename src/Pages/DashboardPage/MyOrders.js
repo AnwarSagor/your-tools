@@ -92,7 +92,7 @@ const MyOrders = () => {
                         </table>
                     </div>
                 </>
-                : <h2 className="flex h-screen justify-center items-center font-extrabold text-5xl text-transparent bg-clip-text bg-gradient-to-b from-red-700 to-red-300 '">You are an Admin!</h2>
+                : <h2 className="flex h-screen justify-center items-center text-center font-extrabold text-5xl text-transparent bg-clip-text bg-gradient-to-b from-red-700 to-red-300">You are an Admin!</h2>
 
             }
 

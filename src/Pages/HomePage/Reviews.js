@@ -11,7 +11,7 @@ const Reviews = () => {
             .then(data => setReviews(data))
     }, []);
     return (
-        <div className='mx-12 my-12'>
+        <div className='lg:mx-12 my-6'>
             <h2 className='font-extrabold mb-4 text-center text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue-900 to-cyan-300'>REVIEWS: {reviews.length}</h2>
             <div>
                 {
