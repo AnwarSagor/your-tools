@@ -19,6 +19,7 @@ import AddTool from './Pages/DashboardPage/AddTool';
 import Payment from './Pages/DashboardPage/Payment';
 import Cancel from './Pages/DashboardPage/Cancel';
 import NotFound from './Pages/SharedPage/NotFound';
+import Blogs from './Pages/Blogs';
 
 function App() {
 
@@ -54,7 +55,7 @@ function App() {
         </Route>
 
         <Route path='about' element={<About></About>}></Route>
-        <Route path='' element></Route>
+        <Route path='blogs' element={<Blogs></Blogs>}></Route>
         <Route path='' element></Route>
         <Route path='' element></Route>
         <Route path='' element></Route>
