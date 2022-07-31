@@ -79,16 +79,11 @@ const MyOrders = () => {
                                                 {(order.price > 0 && !order.paid && order.quantity > 0) && <Link to={`/dashboard/payment/${order._id}`}><button class="btn btn-sm bg-gradient-to-b from-blue-900 to-cyan-300">Pay</button></Link>}
                                                 {(order.price > 0 && order.paid && order.quantity > 0) && <button class="btn btn-sm bg-gradient-to-b from-green-900 to-green-300">Paid</button>}
                                             </td>
-                                            <td className='text-center'>
-                                                <button class="btn disabled btn-sm bg-gradient-to-b from-red-700 to-red-300">X</button>
-                                            </td>
-
 
                                             <td className='text-center'>
-                                                <button class="btn btn-sm">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-
-                                                </button>
+                                                <Link to={`/dashboard/cancel/${order._id}`}>
+                                                    <button class="btn disabled btn-sm bg-gradient-to-b from-red-700 to-red-300">X</button>
+                                                </Link>
                                             </td>
                                         </tr>)
                                 }
@@ -97,7 +92,7 @@ const MyOrders = () => {
                         </table>
                     </div>
                 </>
-                : <h2 className="font-extrabold text-center text-5xl text-transparent bg-clip-text bg-gradient-to-b from-red-700 to-red-300 '">You are an Admin! <br />So, not allowed here!!</h2>
+                : <h2 className="flex h-screen justify-center items-center font-extrabold text-5xl text-transparent bg-clip-text bg-gradient-to-b from-red-700 to-red-300 '">You are an Admin!</h2>
 
             }
 

@@ -25,12 +25,12 @@ const Users = () => {
         <div>
             {admin
                 ? <div>
-                    <h2 className='text-3xl'>All Users: {users.length}</h2>
+                    <h2 className='text-2xl mb-4 ml-4 font-bold bg-clip-text text-transparent bg-gradient-to-b from-blue-900 to-cyan-300'>Total users: {users.length}</h2>
                     <div class="overflow-x-auto">
-                        <table class="table w-full">
+                        <table class="table w-full text-center">
                             <thead>
                                 <tr>
-                                    <th></th>
+                                    <th>Serial</th>
                                     <th>User</th>
                                     <th>Role</th>
                                     <th>Remove user</th>
@@ -38,10 +38,12 @@ const Users = () => {
                             </thead>
                             <tbody>
                                 {
-                                    users.map(user => <User
-                                        key={user._id}
-                                        user={user}
-                                    ></User>
+                                    users.map((user, index) =>
+                                        <User
+                                            key={user._id}
+                                            user={user}
+                                            index={index}
+                                        ></User>
                                     )
                                 }
                             </tbody>

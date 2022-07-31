@@ -21,7 +21,7 @@ const Tool = ({ tool, setPurchase }) => {
                     <h3>Available quantity: {quantity}</h3>
                     <h3>Minimum order quantity: 20 pieces!</h3>
                     <p> <strong>Short Description: </strong> {description}</p>
-                    <button onClick={() => navigateToPurchase(_id)} className='btn'>ORDER NOW</button>
+                    <button onClick={() => navigateToPurchase(_id)} className='btn bg-gradient-to-b from-blue-900 to-cyan-300'>ORDER NOW</button>
                 </div>
             </div>
         </div>

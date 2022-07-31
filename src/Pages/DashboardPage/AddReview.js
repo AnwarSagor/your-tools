@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import useAdmin from '../../hooks/useAdmin';
@@ -10,6 +11,8 @@ const AddReview = () => {
 
     const [user, loading, error] = useAuthState(auth);
     const [admin] = useAdmin(user);
+    const navigate = useNavigate()
+
 
     const onSubmit = data => {
         console.log(data)
@@ -28,6 +31,8 @@ const AddReview = () => {
                 reset()
                 toast.success(`Successfully added your review`);
             })
+        navigate('/home#reviews');
+
     };
 
     return (

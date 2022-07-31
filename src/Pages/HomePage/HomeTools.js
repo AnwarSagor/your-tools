@@ -19,11 +19,9 @@ const HomeTools = (tool) => {
                             </figure>
                             <div className="card-body">
                                 <h2 className="card-title">Name: {tool.name}</h2>
-                                <h3>Minimum order quantity: { }</h3>
-                                <h3>Available quantity: { }</h3>
+                                <h3>Minimum order quantity: 20</h3>
                                 <h3>Price (per unit price): {tool.price}</h3>
-                                <h3>Quantity: {tool.quantity}</h3>
-                                <h3>Supplier: {tool.supplier}</h3>
+                                <h3>Available Quantity: {tool.quantity}</h3>
                                 <p> <strong>Short Description: </strong> {tool.description}</p>
                             </div>
                         </div>

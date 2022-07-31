@@ -3,10 +3,12 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
 
 const Header = () => {
-
     const [user, loading, error] = useAuthState(auth);
+    const [admin] = useAdmin(user);
+
 
     const handleSignOut = () => {
         signOut(auth);
@@ -16,7 +18,6 @@ const Header = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/tools">Tools</Link></li>
         <li><Link to="/home#reviews">Reviews</Link></li>
-        <li><Link to="/home#bussinessSummary">Business Summary</Link></li>
         <li><Link to="/about">About</Link></li>
         {
             user && <li><Link to="/dashboard">Dashboard</Link></li>
@@ -28,15 +29,14 @@ const Header = () => {
                     <button className="btn btn-ghost lowercase">{user.email}</button>
                 </>
                 : <Link to="/signIn">Sign-in</Link>
-
-
-
             }
         </li>
+        {admin && <button class="btn btn-sm mt-2 bg-white text-black">ADMIN</button>}
+
     </>
 
     return (
-        <div className="navbar bg-gradient-to-t from-cyan-500 to-blue-900 ... text-white">
+        <div className="navbar mb-6 bg-gradient-to-t from-cyan-500 to-blue-900 ... text-white">
 
             <div className="navbar-start">
                 <div className="dropdown">

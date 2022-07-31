@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const User = ({ user }) => {
+const User = ({ user, index }) => {
 
     const { email, role } = user;
 
@@ -29,17 +29,18 @@ const User = ({ user }) => {
 
     return (
         <tr >
-            <th>1</th>
-            <td>{email}</td>
+            <th>{index + 1}</th>
+
+            <td >{email}</td>
 
             <td>
                 {role !== 'admin'
                     ? <button onClick={makeAdmin} className='btn btn-sm'>Make admin</button>
-                    : <button className='btn btn-sm btn-success'>Admin</button>
+                    : <button className='btn btn-sm bg-gradient-to-b from-blue-900 to-cyan-300'>Admin</button>
                 }
             </td>
 
-            <td><button className='btn btn-sm btn-error'>XXX</button></td>
+            <td><button className='btn btn-sm bg-gradient-to-b from-red-600 to-red-300'>XXX</button></td>
         </tr>
     );
 };

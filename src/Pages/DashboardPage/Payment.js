@@ -12,19 +12,14 @@ const stripePromise = loadStripe('pk_test_51LQqszCQY2EPuiPHO1miCFepKLerepaW2icqE
 const Payment = () => {
     const { id } = useParams();
     const [order, setOrder] = useState([]);
-
     const [user, loading, error] = useAuthState(auth);
 
     useEffect(() => {
-
         const url = `http://localhost:5000/order/${id}`
-
         fetch(url)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [])
-
-
 
     return (
         <div >
