@@ -13,7 +13,7 @@ const Purchase = () => {
 
     useEffect(() => {
         // const url = "tools.json/${toolId}";
-        const url = `http://localhost:5000/tool/${toolId}`;
+        const url = `https://hidden-cliffs-80104.herokuapp.com/tool/${toolId}`;
 
         fetch(url)
             .then(res => res.json())

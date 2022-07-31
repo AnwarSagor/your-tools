@@ -11,7 +11,7 @@ const Users = () => {
     console.log(users);
     useEffect(() => {
         // fetch('tools.json')
-        fetch('http://localhost:5000/user', {
+        fetch('https://hidden-cliffs-80104.herokuapp.com/user', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

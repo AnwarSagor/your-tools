@@ -7,7 +7,7 @@ const Tools = () => {
 
     useEffect(() => {
         // const url = 'tools.json'
-        const url = `http://localhost:5000/tool`;
+        const url = `https://hidden-cliffs-80104.herokuapp.com/tool`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTools(data))

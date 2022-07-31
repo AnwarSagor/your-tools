@@ -15,7 +15,7 @@ const Payment = () => {
     const [user, loading, error] = useAuthState(auth);
 
     useEffect(() => {
-        const url = `http://localhost:5000/order/${id}`
+        const url = `https://hidden-cliffs-80104.herokuapp.com/order/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrder(data))

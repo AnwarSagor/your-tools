@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const useTool = () => {
     const [tools, setTools] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5000/tool'
+        const url = 'https://hidden-cliffs-80104.herokuapp.com/tool'
         // const url = `https://infinite-badlands-56898.herokuapp.com/product`;
         fetch(url)
 

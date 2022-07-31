@@ -10,7 +10,7 @@ const CheckoutForm = ({ order }) => {
     const { price } = order;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://hidden-cliffs-80104.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

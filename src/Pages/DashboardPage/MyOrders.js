@@ -18,7 +18,7 @@ const MyOrders = () => {
         // const url = 'tools.json'
         // const url = ;
         if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`, {
+            fetch(`https://hidden-cliffs-80104.herokuapp.com/order?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`

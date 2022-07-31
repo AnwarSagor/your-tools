@@ -16,7 +16,7 @@ const AddReview = () => {
 
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/review`;
+        const url = `https://hidden-cliffs-80104.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {

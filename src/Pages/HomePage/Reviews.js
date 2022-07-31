@@ -5,7 +5,7 @@ const Reviews = () => {
 
     useEffect(() => {
         // const url = 'tools.json'
-        const url = `http://localhost:5000/reviews`;
+        const url = `https://hidden-cliffs-80104.herokuapp.com/reviews`;
         fetch(url)
             .then(res => res.json())
             .then(data => setReviews(data))

@@ -15,7 +15,7 @@ const Cancel = () => {
         const proceed = window.confirm('Are you sure to delete?');
 
         if (proceed) {
-            const url = `http://localhost:5000/order/${id}`
+            const url = `https://hidden-cliffs-80104.herokuapp.com/order/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -30,7 +30,7 @@ const Cancel = () => {
     }
 
     useEffect(() => {
-        const url = `http://localhost:5000/order/${id}`
+        const url = `https://hidden-cliffs-80104.herokuapp.com/order/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrder(data))
