@@ -27,7 +27,7 @@ const Payment = () => {
                 <div class="card-body">
                     <p>Hello, {order.name}</p>
                     <h2 class="card-title">Pay for {order.toolName}</h2>
-                    <p>Pay for ${order.price * order.quantity} for {order.quantity} pieces.</p>
+                    <p>Pay ${order.price * order.quantity} for {order.quantity} pieces.</p>
                     {/* <div class="card-actions justify-end">
                         <button class="btn btn-primary">Buy Now</button>
                     </div> */}

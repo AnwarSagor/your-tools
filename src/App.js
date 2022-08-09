@@ -20,6 +20,7 @@ import Payment from './Pages/DashboardPage/Payment';
 import Cancel from './Pages/DashboardPage/Cancel';
 import NotFound from './Pages/SharedPage/NotFound';
 import Blogs from './Pages/Blogs';
+import Test from './Pages/Test';
 
 function App() {
 
@@ -56,13 +57,13 @@ function App() {
 
         <Route path='about' element={<About></About>}></Route>
         <Route path='blogs' element={<Blogs></Blogs>}></Route>
-        <Route path='' element></Route>
-        <Route path='' element></Route>
-        <Route path='' element></Route>
+
         <Route path='/signIn' element={<SignIn></SignIn>}></Route>
         <Route path='/signUp' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
 
+        <Route path='/test' element={<Test></Test>}></Route>
+        <Route path='' element></Route>
       </Routes>
       <ToastContainer />
 

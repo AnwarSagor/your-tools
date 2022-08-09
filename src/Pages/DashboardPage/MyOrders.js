@@ -50,9 +50,7 @@ const MyOrders = () => {
                             <thead>
                                 <tr className='text-center'>
                                     <th>Serial</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Tool Name</th>
+                                    <th className='text-start'>Tool Name</th>
                                     <th>Image</th>
                                     <th>Quantity</th>
                                     <th>Unit Price</th>
@@ -67,8 +65,6 @@ const MyOrders = () => {
                                     orders.map((order, index) =>
                                         <tr>
                                             <th className='text-center'>{index + 1}</th>
-                                            <td>{order.name}</td>
-                                            <td>{order.email}</td>
                                             <td>{order.toolName}</td>
                                             <td className='w-20'> <img src={order.img} alt="" /> </td>
                                             <td className='text-center'>{order.quantity}</td>

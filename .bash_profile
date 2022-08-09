@@ -1,0 +1,1 @@
+export PATH="/home/your-username/npm-global/bin:$PATH" # Add npm bin PATH
