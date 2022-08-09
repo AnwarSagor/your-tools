@@ -11,21 +11,18 @@ const OrderForm = ({ tool, setTool }) => {
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate()
 
-    const { register, handleSubmit, getValues, watch, formState: { errors } } = useForm({
+    const { register, handleSubmit, watch, formState: { errors } } = useForm({
         defaultValues: {
             price: tool.price,
             email: user.email,
             name: user.displayName,
         }
     });
-    console.log(watch(['address', 'mobile', 'totalPrice']));
+    // console.log(watch(['address', 'mobile', 'totalPrice']));
 
-    const [orderTotalPrice, setOrderTotalPrice] = useState('');
-    // console.log(orderTotalPrice);
-
-    const watchPrice = watch('price');
-    const watchQuantity = watch('quantity');
-    const watchTotalPrice = watchPrice * watchQuantity;
+    const orderPrice = watch('price');
+    const orderQuantity = watch('quantity');
+    const orderTotalPrice = orderPrice * orderQuantity;
 
 
 
@@ -64,39 +61,42 @@ const OrderForm = ({ tool, setTool }) => {
 
                         <input className="input input-bordered w-full max-w-xs"
                             value={name || ''}
-                            {...register("toolName")} />
+                            {...register("toolName", { required: true })} />
 
-                        <input className="input input-bordered w-full max-w-xs"
+                        <input className="input input-bordered w-full max-w-xs" readOnly
                             // value={user?.displayName || ''}
-                            {...register("name")} />
+                            {...register("name", { required: true })} />
 
                         <input className="input input-bordered w-full max-w-xs"
                             placeholder='Address'
-                            {...register("address")} />
+                            {...register("address", { required: true })} />
+                        {errors.address && <p className='flex justify-end text-red-500'>Address is required</p>}
 
                         <input className="input input-bordered w-full max-w-xs"
                             placeholder='Mobile'
-                            {...register("mobile")} />
+                            {...register("mobile", { required: true })} />
+                        {errors.mobile && <p className='flex justify-end text-red-500'>Mobile number is required</p>}
 
-                        <input className="input input-bordered w-full max-w-xs"
+                        <input className="input input-bordered w-full max-w-xs" readOnly
                             // value={user?.email || ''}
-                            {...register("email")} />
+                            {...register("email", { required: true })} />
 
                         <div className="flex">
-                            <label htmlFor="price" className='flex w-full max-w-xs items-center'>Price per unit:</label>
-                            <input className="input input-bordered w-full max-w-xs" placeholder='Unit Price'
+                            <label htmlFor="price" className='flex w-full max-w-xs items-center'>Per unit price:</label>
+                            <input className="input input-bordered w-full max-w-xs" placeholder='Per Unit Price' readOnly
+
                                 // value={tool.price} 
-                                type="text" {...register("price")} />
+                                type="text" {...register("price", { required: true })} />
                         </div>
 
                         <div className='flex'>
-                            <label htmlFor="totalPrice" className='flex w-full max-w-xs items-center'>Total Price:</label>
+                            <label htmlFor="totalPrice" className='flex w-full max-w-xs items-center'>Total price:</label>
 
                             <input className="input input-bordered w-full max-w-xs"
-                                placeholder='Total Price'
-                                value={watchTotalPrice}
-                                type="number"
-                                {...register("totalPrice")} />
+                                placeholder='Total Price' readOnly
+                                value={orderTotalPrice}
+                                // type="number"
+                                {...register("totalPrice", { required: true })} />
                         </div>
 
                         <div className="flex">
@@ -104,8 +104,9 @@ const OrderForm = ({ tool, setTool }) => {
                             <input className="input input-bordered w-full max-w-xs"
                                 type="number"
                                 placeholder='Minimum 20'
-                                {...register("quantity")} />
+                                {...register("quantity", { required: true })} />
                         </div>
+                        {errors.quantity && <p className='flex justify-end text-red-500'>Quantity is required</p>}
 
                         <input className="input input-bordered w-full max-w-xs hidden" value={tool?.img || ''} type="text" {...register("img")} />
 
