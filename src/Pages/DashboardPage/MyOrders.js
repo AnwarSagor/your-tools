@@ -45,8 +45,8 @@ const MyOrders = () => {
             {!admin ?
                 <>
                     <h1 className='text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-b from-blue-900 to-cyan-300'>My total orders: {orders.length}</h1>
-                    <div class="overflow-x-auto">
-                        <table class="table w-full">
+                    <div className="overflow-x-auto">
+                        <table className="table w-full">
                             <thead>
                                 <tr className='text-center'>
                                     <th>Serial</th>

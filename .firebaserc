@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "your-tools-client"
-  }
+    "default": "your-tools-client",
+    "   alias firebase=\"`npm config get prefix`/bin/firebase\"": "your-tools-client"
+  },
+  "targets": {},
+  "etags": {}
 }
