@@ -17,7 +17,7 @@ const Reviews = () => {
                 {
                     reviews.map(review =>
                         <div class="card bg-base-100 mb-4 shadow-xl">
-                            <div class="card-body">
+                            <div class="card-body text-transparent bg-clip-text bg-gradient-to-b from-blue-900 to-cyan-300">
                                 <h2 class="card-title">User: {review.user}</h2>
                                 <p> <strong>Rating:</strong> {review.rating} out of 5!</p>
                                 <p> <strong>Description:</strong> {review.description}</p>

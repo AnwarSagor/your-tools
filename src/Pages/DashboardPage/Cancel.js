@@ -35,6 +35,7 @@ const Cancel = () => {
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [])
+
     return (
         <div>
 

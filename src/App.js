@@ -21,6 +21,7 @@ import Cancel from './Pages/DashboardPage/Cancel';
 import NotFound from './Pages/SharedPage/NotFound';
 import Blogs from './Pages/Blogs';
 import Test from './Pages/Test';
+import DeleteTool from './Pages/DashboardPage/DeleteTool';
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
           <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
           <Route path='users' element={<Users></Users>}></Route>
           <Route path='addTool' element={<AddTool></AddTool>}></Route>
+          <Route path='deleteTool' element={<DeleteTool></DeleteTool>}></Route>
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='cancel/:id' element={<Cancel></Cancel>}></Route>
         </Route>

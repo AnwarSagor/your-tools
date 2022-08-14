@@ -44,6 +44,8 @@ const AddTool = () => {
                         <input className="input input-bordered w-full max-w-xs mb-2" placeholder='Quantity' type="number" {...register("quantity")} />
                         <input className="input input-bordered w-full max-w-xs mb-2" placeholder='Photo URL' type="text" {...register("img")} />
                         {/* <input className="input input-bordered w-full max-w-xs" type="file" {...register("img")} /> */}
+                        <textarea className="input input-bordered w-full max-w-xs mb-2" placeholder='Short description' type="text" {...register("shortDescription")} />
+
                         {admin
                             ? <input className='btn w-full max-w-xs' type="submit" value="Add Tool" />
                             : <h2 className="font-extrabold text-center text-2xl text-transparent bg-clip-text bg-gradient-to-b from-red-700 to-red-300 '">You are not an Admin!</h2>

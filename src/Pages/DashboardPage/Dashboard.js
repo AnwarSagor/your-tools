@@ -11,13 +11,11 @@ const Dashboard = () => {
         <div class="drawer drawer-mobile">
             <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content">
-                <h2 className='text-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-900 to-cyan-300'>DASHBOARD</h2>
                 <Outlet></Outlet>
-
             </div>
-            <div class="drawer-side">
+            <div class="drawer-side mr-4 bg-gradient-to-b from-cyan-500 to-blue-900 ... text-white">
                 <label for="dashboard-sidebar" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-40 bg-base-100 text-base-content">
+                <ul class="menu text-white font-bold p-4 overflow-y-auto w-40 ">
                     {/* <!-- Sidebar content here --> */}
 
                     {!admin &&
@@ -33,6 +31,7 @@ const Dashboard = () => {
                         <>
                             <li><Link to="/dashboard/users">All Users</Link></li>
                             <li><Link to="/dashboard/addTool">Add Tool</Link></li>
+                            <li><Link to="/dashboard/deleteTool">Delete Tool</Link></li>
                         </>}
                 </ul>
 

@@ -4,7 +4,7 @@ import auth from '../../firebase.init';
 import Loading from '../SharedPage/Loading';
 
 const ToolDetail = ({ tool, setTool }) => {
-    const { _id, name, img, price, quantity, description } = tool;
+    const { _id, name, img, price, quantity, shortDescription } = tool;
     const [user, loading, error] = useAuthState(auth);
 
     if (loading) {
@@ -15,8 +15,8 @@ const ToolDetail = ({ tool, setTool }) => {
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div>
-                    <figure>
-                        <img src={tool.img} alt="Tool Image" />
+                    <figure className='h-60'>
+                        <img className='max-h-60 p-2' src={img} alt="Tool" />
                     </figure>
                     <div className="card-body">
                         <h2 className="card-title">{name}</h2>
@@ -28,7 +28,7 @@ const ToolDetail = ({ tool, setTool }) => {
 
                         }</h3>
                         <h3>Price (per unit price): {price}</h3>
-                        <p> <strong>Short Description: </strong> {description}</p>
+                        <p className='text-justify'> <strong>Short Description: </strong> {shortDescription}</p>
                         {/* <button disabled={tool.quantity < 14} className='btn'>Purchase</button> */}
                     </div>
                 </div>

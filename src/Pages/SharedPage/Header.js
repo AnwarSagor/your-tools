@@ -37,7 +37,7 @@ const Header = () => {
     </>
 
     return (
-        <div className="navbar mb-6 bg-gradient-to-t from-cyan-500 to-blue-900 ... text-white">
+        <div className="navbar mb- bg-gradient-to-t from-cyan-500 to-blue-900 ... text-white">
 
             <div className="navbar-start">
                 <div className="dropdown">

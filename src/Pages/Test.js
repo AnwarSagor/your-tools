@@ -1,32 +1,51 @@
-import React, { useState } from 'react'
-import { useForm } from "react-hook-form";
+import { useState } from 'react';
 
-const App = () => {
-    const { register, watch, formState: { errors }, handleSubmit } = useForm();
-    const watchShowAge = watch("showAge", false); // you can supply default value as second argument
-    const watchAllFields = watch(); // when pass nothing as argument, you are watching everything
-    const watchFields = watch(["showAge", "number"]); // you can also target specific fields by their names
+function App() {
+    const [inputFields, setInputFields] = useState([
+        { name: '', age: '' }
+    ])
 
-    // Callback version of watch.  It's your responsibility to unsubscribe when done.
-    React.useEffect(() => {
-        const subscription = watch((value, { name, type }) => console.log(value, name, type));
-        return () => subscription.unsubscribe();
-    }, [watch]);
+    // const handleFormChange = (index, event) => {
+    //     let data = [...inputFields];
+    //     data[index][event.target.name] = event.target.value;
+    //     setInputFields(data);
+    // }
 
-    const onSubmit = data => console.log(data);
+    const addFields = (event) => {
+        event.preventDefault()
+        let newfield = { name: '', age: '' }
+        setInputFields([...inputFields, newfield])
+    }
+
 
     return (
-        <>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="checkbox" {...register("showAge")} />
+        <div className="App">
+            <form>
+                {inputFields.map((input, index) => {
+                    return (
+                        <div key={index}>
+                            <input
+                                // name='name'
+                                placeholder='Name'
+                            // value={input.name}
+                            // onChange={event => handleFormChange(index, event)}
 
-                {/* based on yes selection to display Age Input*/}
-                {watchShowAge && <input type="number" {...register("age", { min: 50 })} />}
+                            />
+                            <input
+                                // name='age'
+                                placeholder='Age'
+                            // value={input.age}
+                            // onChange={event => handleFormChange(index, event)}
 
-                <input type="submit" />
+                            />
+
+                            <button onClick={addFields}>Add More..</button>
+                        </div>
+                    )
+                })}
             </form>
-        </>
+        </div>
     );
 }
 
-export default App
+export default App;
